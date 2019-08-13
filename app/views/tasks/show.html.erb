@@ -1,0 +1,13 @@
+<h1>Task</h1>
+
+  <% box = @task.completed ? '[X]' : '[_]'  %>
+  <h2><%="#{box} #{@task.title}"%></h2>
+  <h3><%= @task.details %></h3>
+  <h3><%=link_to "Edit task", "/tasks/#{@task.id}/edit"  %></h3>
+
+  <h3> <%= link_to "Delete", tasks_path,
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+  </h3>
+
+  <%= link_to 'Back to list', tasks_path %>
